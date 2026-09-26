@@ -1,0 +1,25 @@
+name: CustomWeapons
+version: 1.0.0
+main: com.customweapons.CustomWeaponsPlugin
+api-version: '1.21'
+author: YourName
+description: Custom mace/spear abilities - Earthmace, Venom Spear, Astral Mace
+
+commands:
+  earthquake:
+    description: Gives the Earthmace (op only)
+    usage: /earthquake
+    permission: customweapons.admin
+  venomspear:
+    description: Gives the Venom Spear (op only)
+    usage: /venomspear
+    permission: customweapons.admin
+  astralmace:
+    description: Gives the Astral Mace (op only)
+    usage: /astralmace
+    permission: customweapons.admin
+
+permissions:
+  customweapons.admin:
+    description: Allows giving yourself the custom weapons
+    default: op
