@@ -212,9 +212,12 @@ public class WeaponListener implements Listener {
         if (target.equals(owner)) return;
 
         Vector pull = owner.getLocation().toVector().subtract(target.getLocation().toVector());
-        double distance = Math.max(pull.length(), 0.1);
-        pull.normalize().multiply(Math.min(distance * 0.6, 2.6));
-        pull.setY(Math.max(pull.getY(), 0.25)); // slight lift so they don't just skid on the ground
+
+        double distance = pull.length();
+
+        if (distance > 0.1) {
+            pull.normalize().multiply(Math.min(distance * 1.5, 10.0));
+        }
 
         target.setVelocity(pull);
         target.getWorld().playSound(target.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 0.7f);
