@@ -116,7 +116,7 @@ public class WeaponListener implements Listener {
             if (!(nearby instanceof LivingEntity living)) continue;
             if (nearby.getLocation().distance(center) > radius) continue;
 
-            living.damage(4.0, player); // ~2 hearts
+            living.damage(20.0, player); // ~10 hearts
             living.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 5 * 20, 1));
         }
     }
